@@ -16,5 +16,5 @@ Pandas
 How to launch:
 1. Open Terminal
 2. Go to the file folder
-3. write python filename.py
+3. Write python filename.py
 4. Enjoy
