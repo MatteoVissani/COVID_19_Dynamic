@@ -47,9 +47,9 @@ M_vec=output[4]
 
 
 plt.figure()
-plt.errorbar(xdata+14,ydata-ydata_rec,np.sqrt(ydata-ydata_rec),color='green',linestyle='--',marker='o')
-plt.errorbar(xdata+14,ydata_death,np.sqrt(ydata_death),color='black',linestyle='--',marker='o')
-plt.errorbar(xdata+14,ydata_rec,np.sqrt(ydata_rec),color='blue',linestyle='--',marker='o')
+plt.errorbar(xdata+14,ydata-ydata_rec,np.sqrt(ydata-ydata_rec),color='green',linestyle='--',marker='o',label = 'infected [data]')
+plt.errorbar(xdata+14,ydata_death,np.sqrt(ydata_death),color='black',linestyle='--',marker='o',label = 'Deaths [data]')
+plt.errorbar(xdata+14,ydata_rec,np.sqrt(ydata_rec),color='blue',linestyle='--',marker='o',label = 'Recovered [data]')
 plt.plot(t, I_vec/3, 'g--', label='Infected/3')
 plt.plot(t, S_vec, 'm--', label='Susceptible')
 plt.plot(t, R_vec, 'b--', label='Recovered with immunity')
@@ -71,8 +71,13 @@ print('Total infected ',int(M_vec[-1]+R_vec[-1]))
 print('Max. infected ',int(I_vec.max()))
 print('Max. infected (hospitalized)',int(I_vec.max()/3*20/100))
 
-print(I_vec)
 
 
 
-
+# plot S
+plt.figure()
+plt.plot(t,S_vec)
+plt.xlabel('Number of days after the first infect')
+plt.ylabel('Number of S')
+plt.grid(color='gray', linestyle='--', linewidth=0.5)
+plt.show()
