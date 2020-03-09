@@ -61,7 +61,7 @@ plt.grid(color='gray', linestyle='--', linewidth=0.5)
 plt.yscale('log')
 plt.xlim(0,180)
 plt.ylim(1,0.2*10**8)
-plt.savefig('SIR_output.png',dpi=300)
+#plt.savefig('SIR_output.png',dpi=300)
 plt.show()
 
 
@@ -70,6 +70,8 @@ print('Deaths',int(M_vec[-1]))
 print('Total infected ',int(M_vec[-1]+R_vec[-1]))
 print('Max. infected ',int(I_vec.max()))
 print('Max. infected (hospitalized)',int(I_vec.max()/3*20/100))
+
+print(I_vec)
 
 
 
